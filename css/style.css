@@ -1,4 +1,29 @@
+/* MAIN */
+.sun,
+.face,
+.cat__coffee,
+.cat__work,
+.cat__lunch,
+.cat__eat,
+.cat__night,
+.cloud,
+.cloud__left,
+.plane {
+    position: absolute;
+}
 
+.sun,
+.sun:hover,
+.ground,
+.ground:active,
+.cat,
+.cat:hover,
+.plane,
+.plane:hover {
+    transition: all 2s;
+}
+
+/* SUN */
 .sun {
     width: 150px;
     height: 150px;
@@ -7,8 +32,7 @@
     background-color: rgb(243, 119, 36);
     animation: changeSun 20s linear;
     animation-iteration-count: infinite;
-    transition: all 2s;
-    position: absolute;
+    
     bottom: 0;
     left: 0;
     z-index: 1;
@@ -16,12 +40,10 @@
 
 .sun:hover {
     transform: rotate(1000deg);
-    transition: all 2s;
 }
 
 .face {
     width: 100px;
-    position: absolute;
     top: 10%;
     left: 12%;
 }
@@ -57,6 +79,7 @@
     }
 }
 
+/* SKY */
 .sky {
     position: relative;
     background-color: rgb(46, 4, 70);
@@ -74,15 +97,15 @@
     }
 
     10% {
-        background-color: rgba(250, 99, 99, 0.938);
+        background-color: rgba(250, 99, 99, 0.9);
     }
 
     25% {
-        background-color: rgb(43, 183, 226,.8);
+        background-color: rgb(43, 183, 226,.6);
     }
 
     50% {
-        background-color: rgb(33, 138, 236, 0.5);
+        background-color: rgb(33, 138, 236, 0.4);
     }
 
     75% {
@@ -92,29 +115,29 @@
     100% {
         background-color: rgb(9, 9, 73);
     }
-
 }
 
+/* GROUND */
 .ground {
     position: fixed;
     bottom: 0;
     width: 100%;
-    border-radius: 50% 50% 0 0;
+    border-radius: 70% 70% 0 0;
     box-shadow: 0px 0px 20px rgb(114, 186, 235);
     z-index: 10;
 }
 
 .ground:active {
-    transform: scale(1.5);
-    transition: all 2s;
+    transform: translate(0, 200px);
 }
+
+/* CATS */
 .cat {
     width: 300px;
 }
 
 .cat:hover {
     transform: skewX(20deg);
-    transition: all 2s;
 }
 
 .cat__lunch {
@@ -122,14 +145,12 @@
 }
 
 .cat__coffee {
-    position: absolute;
     left: 15%;
     bottom: -300px;
     z-index: 100;
     animation: catCoffee 20s linear;
     animation-iteration-count: infinite;
 }
-
 
 @keyframes catCoffee {
     for,
@@ -161,11 +182,9 @@
     100% {
         bottom: -300px;
     }
-
 }
 
 .cat__work {
-    position: absolute;
     left: 20%;
     bottom: -300px;
     z-index: 100;
@@ -218,11 +237,9 @@
     56% {
         bottom: -300px;
     }
-
 }
 
 .cat__lunch {
-    position: absolute;
     left: 30%;
     bottom: -300px;
     z-index: 100;
@@ -255,12 +272,9 @@
         left: 35%;
         bottom: -300px;
     }
-
-
 }
 
 .cat__eat {
-    position: absolute;
     left: 56%;
     bottom: -300px;
     z-index: 100;
@@ -278,7 +292,6 @@
     55% {
         left: 56%;
         bottom: -300px;
-
     }
     
     56% {
@@ -294,11 +307,9 @@
     70% {
         bottom: -300px;
     }
-
 }
 
 .cat__night {
-    position: absolute;
     left: -100px;
     bottom: 0;
     z-index: 100;
@@ -310,8 +321,7 @@
     for,
     to {
         left: -100px;
-        bottom: 0;
-        
+        bottom: 0;  
     }
 
     14% {
@@ -337,11 +347,10 @@
         left: 100%;
         bottom: 0;
     }
-
 }
 
+/* CLOUDS */
 .cloud {
-    position: absolute;
     right: 0;
     bottom: 200px;
     animation: changeCloud 20s linear;
@@ -349,13 +358,13 @@
 }
 
 .cloud__left {
-    position: absolute;
     left: 0;
     bottom: 200px;
     animation: changeCloud 20s linear;
     animation-iteration-count: infinite;
 }
 
+/* CLOUDS ANIMATION*/
 @keyframes changeCloud {
     for,
     to {
@@ -370,15 +379,13 @@
         bottom: 200px;
     }
 
-
     100% {
         bottom: 200px;
     }
-
 }
 
+/* PLANE */
 .plane {
-    position: absolute;
     left: 100%;
     bottom: -200px;
     animation: planeFly 20s ease-out;
@@ -386,22 +393,25 @@
     z-index: 5;
 }
 
+.plane:hover {
+    transform: scale(2);
+}
+
 .plane__img {
     width: 100px;
 }
 
+/* PLANE ANIMATION */
 @keyframes planeFly {
     from,
     to {
-    left: 100%;
-    bottom: -200px;
+        left: 100%;
+        bottom: -200px;
     }
 
-    
     20% {
         left: 95%;
         bottom: 20%; 
-
     }
 
     100% {
